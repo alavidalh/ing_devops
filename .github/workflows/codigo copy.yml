@@ -1,0 +1,19 @@
+
+name: Pipeline con Errores
+
+on:
+  push:
+    branches: rama1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Saludo
+        run: echo "Hola Clase"
+
+      - name: Validar Secret
+        run: echo "El token es ${{ secrets.TOKEN }}"
